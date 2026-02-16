@@ -57,8 +57,7 @@ proyecto-ra-03-lmsgi/
 ## Controles
 
 ### Ratón
-- Haz clic en cualquiera de los 5 botones para realizar tu jugada
-- Pasa el ratón sobre los botones para ver un tooltip con información
+Haz clic en cualquiera de los 5 botones para realizar tu jugada. Pasa el ratón sobre los botones para ver un tooltip con información sobre qué opciones vence cada jugada.
 
 ### Teclado (Opcional)
 - **1** - Piedra
@@ -71,17 +70,16 @@ proyecto-ra-03-lmsgi/
 
 ## Tecnologías Utilizadas
 
-### HTML5
-Estructura semántica del proyecto
+**HTML5** - Estructura semántica del proyecto
 
-### CSS3
+**CSS3**
 - Variables CSS personalizadas
 - Flexbox y Grid Layout
 - Animaciones y transiciones
 - Gradientes
 - Media queries para responsive design
 
-### JavaScript (Vanilla)
+**JavaScript (Vanilla)**
 - Manipulación del DOM
 - Event listeners
 - Lógica del juego
@@ -92,20 +90,20 @@ Estructura semántica del proyecto
 
 El proyecto implementa las siguientes funciones JavaScript:
 
-- **inicializarJuego()** - Configura el juego y los event listeners
-- **jugar(eleccionUsuario)** - Ejecuta una ronda del juego
-- **obtenerEleccionCPU()** - Genera la elección aleatoria de la CPU
-- **mostrarEleccion(display, eleccion, jugador)** - Muestra las jugadas en pantalla
-- **reiniciarDisplays()** - Limpia los displays para una nueva jugada
-- **calcularResultadoJugada(usuario, cpu)** - Determina el ganador
-- **mostrarResultadoJugada(resultado, usuario, cpu)** - Muestra el resultado visual
-- **actualizarContadores()** - Actualiza las estadísticas
-- **inicializarTooltips()** - Configura los tooltips informativos
+- `inicializarJuego()` - Configura el juego y los event listeners
+- `jugar(eleccionUsuario)` - Ejecuta una ronda del juego
+- `obtenerEleccionCPU()` - Genera la elección aleatoria de la CPU
+- `mostrarEleccion(display, eleccion, jugador)` - Muestra las jugadas en pantalla
+- `reiniciarDisplays()` - Limpia los displays para una nueva jugada
+- `calcularResultadoJugada(usuario, cpu)` - Determina el ganador
+- `mostrarResultadoJugada(resultado, usuario, cpu)` - Muestra el resultado visual
+- `actualizarContadores()` - Actualiza las estadísticas
+- `inicializarTooltips()` - Configura los tooltips informativos
 
 ### Funciones Opcionales
 
-- **mostrarReglas()** - Muestra las reglas en consola
-- **resetearJuego()** - Reinicia completamente el juego
+- `mostrarReglas()` - Muestra las reglas en consola
+- `resetearJuego()` - Reinicia completamente el juego
 - Event listener para controles de teclado
 
 ## Paleta de Colores
@@ -124,12 +122,7 @@ El proyecto implementa las siguientes funciones JavaScript:
 
 ## Documentación del Código
 
-El código JavaScript está completamente documentado siguiendo el estándar **Doxygen** con:
-
-- Descripciones detalladas de cada función
-- Parámetros de entrada con tipos
-- Valores de retorno
-- Ejemplos de uso cuando es necesario
+El código JavaScript está completamente documentado siguiendo el estándar Doxygen con descripciones detalladas de cada función, parámetros de entrada con tipos, valores de retorno y ejemplos de uso cuando es necesario.
 
 ## Contexto Académico
 
@@ -137,12 +130,12 @@ Este proyecto fue desarrollado como parte del **Resultado de Aprendizaje 03 (RA0
 
 ### Criterios de Evaluación Cubiertos
 
-- **CE3a**: Identificación de lenguajes de script de cliente
-- **CE3b**: Sintaxis básica de JavaScript
-- **CE3c**: Selección y acceso a elementos del DOM
-- **CE3d**: Creación y modificación de elementos
-- **CE3e**: Eliminación de elementos
-- **CE3f**: Modificación de estilos desde JavaScript
+- **CE3a** - Identificación de lenguajes de script de cliente
+- **CE3b** - Sintaxis básica de JavaScript
+- **CE3c** - Selección y acceso a elementos del DOM
+- **CE3d** - Creación y modificación de elementos
+- **CE3e** - Eliminación de elementos
+- **CE3f** - Modificación de estilos desde JavaScript
 
 ## Autor
 
@@ -153,5 +146,4 @@ Declaro que este proyecto ha sido realizado íntegramente por mí sin el uso de 
 ## Licencia
 
 Este proyecto es de carácter educativo y fue desarrollado como parte de un proyecto académico.
-
 ```
