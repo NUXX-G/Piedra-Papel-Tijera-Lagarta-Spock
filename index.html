@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nelson Filipe Fardilha Karlsson">
+    <title>Piedra, Papel, Tijera, Lagarto, Spock</title>
+    <link rel="icon" type="image/svg+xml" href="imagenes/spock-hand-gesture.svg">
+    
+    <!-- Importa las fuentes Orbitron y Roboto desde Google Fonts con varios pesos disponibles -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <h1 class="titulo-juego">Piedra · Papel · Tijera · Lagarto · Spock</h1>
+        <p class="subtitulo-juego">El juego definitivo</p>
+    </header>
+
+    <main>
+        <div class="paneles-arriba">
+            <!-- Panel de selección de jugada -->
+            <section class="panel-seleccion-jugada">
+                <h2>Elige tu jugada</h2>
+                <div class="contenedor-elecciones-juego">
+                    <button class="boton-eleccion-jugada" id="piedra">
+                        <span class="icono-jugada">🪨</span>
+                        <span>Piedra</span>
+                    </button>
+                    <button class="boton-eleccion-jugada" id="papel">
+                        <span class="icono-jugada">📄</span>
+                        <span>Papel</span>
+                    </button>
+                    <button class="boton-eleccion-jugada" id="tijera">
+                        <span class="icono-jugada">✂️</span>
+                        <span>Tijera</span>
+                    </button>
+                    <button class="boton-eleccion-jugada" id="lagarto">
+                        <span class="icono-jugada">🦎</span>
+                        <span>Lagarto</span>
+                    </button>
+                    <button class="boton-eleccion-jugada" id="spock">
+                        <span class="icono-jugada">🖖</span>
+                        <span>Spock</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Panel de batalla -->
+            <section class="panel-batalla">
+                <h2>Batalla</h2>
+                <div class="contenedor-jugadores">
+                    <div class="jugador">
+                        <div class="etiqueta-jugador">TÚ</div>
+                        <div class="mostrar-jugada" id="display-jugador">
+                            <span class="placeholder">?</span>
+                        </div>
+                    </div>
+
+                    <div class="vs-circle">VS</div>
+
+                    <div class="jugador">
+                        <div class="etiqueta-jugador">CPU</div>
+                        <div class="mostrar-jugada" id="display-cpu">
+                            <span class="placeholder">?</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Panel de resultados y estadísticas -->
+        <section class="contenedor-resultado">
+            <div class="resultados">
+                <div class="mensaje-resultado" id="mensaje-resultado">¡Batalla!</div>
+                <div class="estadisticas-juego">
+                    <div class="panel-estadistica">
+                        <span class="valor-estadistica" id="victorias">0</span>
+                        <span class="etiqueta-estadistica">Victorias</span>
+                    </div>
+                    <div class="panel-estadistica">
+                        <span class="valor-estadistica" id="derrotas">0</span>
+                        <span class="etiqueta-estadistica">Derrotas</span>
+                    </div>
+                    <div class="panel-estadistica">
+                        <span class="valor-estadistica" id="empates">0</span>
+                        <span class="etiqueta-estadistica">Empates</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Proyecto evaluación RA 03 - Lenguajes de marcas y sistemas de gestión de información</p>
+        <p>Proyecto realizado por: Nelson Filipe Fardilha Karlsson (Declaro que no he usado IA en el proyecto)</p>
+    </footer>
+
+    <script src="js/javascript.js"></script>
+</body>
+</html>
