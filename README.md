@@ -43,7 +43,7 @@ Cada opción puede vencer a otras dos opciones:
 ## Estructura del Proyecto
 
 ```
-proyecto-ra-03-lmsgi/
+Piedra-Papel-Tijera-Lagarta-Spock/
 ├── index.html
 ├── estilos.css
 ├── js/
