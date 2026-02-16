@@ -1,4 +1,3 @@
-```markdown
 # Piedra, Papel, Tijera, Lagarto, Spock
 
 Una versión moderna y animada del clásico juego de Piedra, Papel y Tijera, extendido con las opciones Lagarto y Spock, popularizado por la serie *The Big Bang Theory*.
@@ -146,4 +145,4 @@ Declaro que este proyecto ha sido realizado íntegramente por mí sin el uso de 
 ## Licencia
 
 Este proyecto es de carácter educativo y fue desarrollado como parte de un proyecto académico.
-```
+
