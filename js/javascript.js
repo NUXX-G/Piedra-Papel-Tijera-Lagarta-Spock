@@ -13,23 +13,17 @@ const jugadas =
 
 document.addEventListener('DOMContentLoaded', function()
 {
-    console.log("DOM cargado - El juego esta listo");
     inicializarJuego();
 })
 
 function inicializarJuego()
-{
-
-    console.log("Inicializando juego...");
-    
-    //obtener botones
+{    
     const botonPiedra = document.getElementById('piedra');
     const botonPapel = document.getElementById('papel');
     const botonTijera = document.getElementById('tijera');
     const botonLagarto = document.getElementById('lagarto');
     const botonSpock = document.getElementById('spock');
 
-    //evento click
     botonPiedra.addEventListener('click', function()
     {
         jugar('piedra');
@@ -55,7 +49,6 @@ function inicializarJuego()
         jugar('spock');
     });
 
-    //botones opcionales
     const btnReiniciar = document.getElementById('btn-reiniciar');
     const btnReglas = document.getElementById('btn-reglas');
         
@@ -71,11 +64,11 @@ function inicializarJuego()
 
     inicializarTooltips();
 
-    const contenedor = document.querySelector('main');
-    if (contenedor) 
+    setTimeout(() => 
     {
-        contenedor.style.opacity = '1';
-    }
+        const contenedor = document.querySelector('main');
+        if (contenedor) contenedor.style.opacity = '1';
+    }, 100);
 }
 
 
@@ -83,32 +76,25 @@ function jugar(eleccionUsuario)
 {
     reiniciarDisplays();
 
-    //obtener elementos
     const displayJugador = document.getElementById('display-jugador');
     const displayCPU = document.getElementById('display-cpu');
 
-    //generar eleccion cpu
     const eleccionCPU = obtenerEleccionCPU();
 
-    //mostrar jugador
     mostrarEleccion(displayJugador, eleccionUsuario, "JUGADOR");
 
-    //mostrar cpu con delay
     setTimeout(function()
     {
         mostrarEleccion(displayCPU, eleccionCPU, "CPU");
 
-        //calcular quien gana
         const resultado = calcularResultadoJugada(eleccionUsuario, eleccionCPU);
 
-        //mostrar resultado
         mostrarResultadoJugada(resultado, eleccionUsuario, eleccionCPU);
     }, 500);
 }
 
 function obtenerEleccionCPU()
 {
-    //numero aleatorio
     const nummeroAleatorio = Math.random();
     const multi = nummeroAleatorio * 5;
     const indice = Math.floor(multi);
@@ -139,14 +125,11 @@ function obtenerEleccionCPU()
 
 function mostrarEleccion(display, eleccion, jugador)
 {  
-    //limpiar display
     display.innerHTML = '';
     display.classList.remove('placeholder');
 
-    //agregar clase
     display.classList.add('active');
 
-    //crear emoji
     const icono = document.createElement('div');
     icono.classList.add('icono-jugada-grande');
     
@@ -169,40 +152,33 @@ function mostrarEleccion(display, eleccion, jugador)
             break;
     }
 
-    //crear texto
     const texto = document.createElement('div');
     texto.classList.add('texto-jugada');
 
-    //mayuscula
     const eleccionMayus = eleccion.charAt(0).toUpperCase() + eleccion.slice(1);
 
     texto.textContent = eleccionMayus;
 
-    //agregar al display
     display.appendChild(icono);
     display.appendChild(texto);
 }
 
 function reiniciarDisplays()
 {
-    //obtener elementos
     const displayJugador = document.getElementById('display-jugador');
     const displayCPU = document.getElementById('display-cpu');
     const mensaje = document.getElementById('mensaje-resultado');
 
-    //limpiar
     displayJugador.innerHTML = '?';
     displayCPU.innerHTML = '?';
     
     displayJugador.classList.add('placeholder');
     displayCPU.classList.add('placeholder');
 
-    //quitar active
     displayJugador.classList.remove('active');
     displayCPU.classList.remove('active');
 
-    //resetear mensaje
-    mensaje.textContent = '¡Batalla!';
+    mensaje.textContent = 'Batalla';
     mensaje.classList.remove('ganador');
     mensaje.classList.remove('perdedor');
     mensaje.classList.remove('empate');
@@ -211,7 +187,6 @@ function reiniciarDisplays()
 
 function calcularResultadoJugada(usuario, cpu)
 {
-    //empate
     if(usuario === cpu)
     {
         return "empate";
@@ -284,18 +259,16 @@ function mostrarResultadoJugada(resultado, usuario, cpu)
 {
     const mensaje = document.getElementById('mensaje-resultado');
 
-    //quitar clases
     mensaje.classList.remove('ganador');
     mensaje.classList.remove('perdedor');
     mensaje.classList.remove('empate');
 
-    //convertir a mayuscula
     const usuarioMayus = usuario.charAt(0).toUpperCase() + usuario.slice(1);
     const cpuMayus = cpu.charAt(0).toUpperCase() + cpu.slice(1);
 
     if (resultado === "victoria")
     {
-        mensaje.textContent = `¡Ganastes! ${usuarioMayus} vence a ${cpuMayus}`;
+        mensaje.textContent = `Ganastes ${usuarioMayus} vence a ${cpuMayus}`;
         mensaje.classList.add('ganador');
         victorias++;
     }
@@ -307,7 +280,7 @@ function mostrarResultadoJugada(resultado, usuario, cpu)
     }
     else
     {
-        mensaje.textContent = `¡Empate! Ambos eligieron ${usuarioMayus}`;
+        mensaje.textContent = `Empate Ambos eligieron ${usuarioMayus}`;
         mensaje.classList.add('empate');
         empates++;
     }
@@ -317,7 +290,6 @@ function mostrarResultadoJugada(resultado, usuario, cpu)
 
 function actualizarContadores()
 {
-    //actualizar
     const elemVictorias = document.getElementById('victorias');
     const elemDerrotas = document.getElementById('derrotas');
     const elemEmpates = document.getElementById('empates');
@@ -329,14 +301,12 @@ function actualizarContadores()
 
 function inicializarTooltips()
 {
-    //obtener botones
     const btnPiedra = document.getElementById('piedra');
     const btnPapel = document.getElementById('papel');
     const btnTijera = document.getElementById('tijera');
     const btnLagarto = document.getElementById('lagarto');
     const btnSpock = document.getElementById('spock');
     
-    //poner tooltips
     btnPiedra.title = "Piedra vence a: Tijera y Lagarto";
     btnPapel.title = "Papel vence a: Piedra y Spock";
     btnTijera.title = "Tijera vence a: Papel y Lagarto";
@@ -348,31 +318,29 @@ function mostrarReglas()
 {
     console.log("REGLAS DEL JUEGO: Piedra, Papel, Tijera, Lagarto, Spock");
     console.log("");
-    console.log("🪨 PIEDRA vence a:");
-    console.log("   - ✂️  Tijera (aplasta)");
-    console.log("   - 🦎 Lagarto (aplasta)");
+    console.log("PIEDRA gana a:");
+    console.log("-Tijera");
+    console.log("-Lagarto");
     console.log("");
-    console.log("📄 PAPEL vence a:");
-    console.log("   - 🪨 Piedra (envuelve)");
-    console.log("   - 🖖 Spock (desautoriza)");
+    console.log("PAPEL gana a:");
+    console.log("-Piedra");
+    console.log("-Spock");
     console.log("");
-    console.log("✂️  TIJERA vence a:");
-    console.log("   - 📄 Papel (corta)");
-    console.log("   - 🦎 Lagarto (decapita)");
+    console.log("TIJERA gana a:");
+    console.log("-Papel");
+    console.log("-Lagarto");
     console.log("");
-    console.log("🦎 LAGARTO vence a:");
-    console.log("   - 📄 Papel (devora)");
-    console.log("   - 🖖 Spock (envenena)");
+    console.log("LAGARTO gana a:");
+    console.log("-Papel");
+    console.log("-Spock");
     console.log("");
-    console.log("🖖 SPOCK vence a:");
-    console.log("   - ✂️  Tijera (rompe)");
-    console.log("   - 🪨 Piedra (vaporiza)");
-    console.log("");
+    console.log("SPOCK gana a:");
+    console.log("-Tijera");
+    console.log("-Piedra");
 }
 
 function resetearJuego()
 {
-    //poner a 0 los contadores
     victorias = 0;
     derrotas = 0;
     empates = 0;
@@ -383,20 +351,18 @@ function resetearJuego()
     const mensaje = document.getElementById('mensaje-resultado');
     if(mensaje)
     {
-        mensaje.textContent = '¡Juego reiniciado!';
+        mensaje.textContent = 'Juego reiniciado';
         mensaje.classList.remove('ganador');
         mensaje.classList.remove('perdedor');
         mensaje.classList.remove('empate');
-        mensaje.textContent = '¡Batalla!';
+        mensaje.textContent = 'Batalla';
     }
-    
-    console.log("Juego reiniciado correctamente");
 }
 
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function(event) 
+{
     const tecla = event.key.toLowerCase();
     
-    //detectar tecla
     switch(tecla)
     {
         case '1':
