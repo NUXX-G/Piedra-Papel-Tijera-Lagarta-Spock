@@ -6,8 +6,6 @@
     <meta name="author" content="Nelson Filipe Fardilha Karlsson">
     <title>Piedra, Papel, Tijera, Lagarto, Spock</title>
     <link rel="icon" type="image/svg+xml" href="imagenes/spock-hand-gesture.svg">
-    
-    <!-- Importa las fuentes Orbitron y Roboto desde Google Fonts con varios pesos disponibles -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="estilos.css">
@@ -20,76 +18,76 @@
 
     <main>
         <div class="paneles-arriba">
-            <!-- Panel de selección de jugada -->
             <section class="panel-seleccion-jugada">
                 <h2>Elige tu jugada</h2>
                 <div class="contenedor-elecciones-juego">
                     <button class="boton-eleccion-jugada" id="piedra">
-                        <span class="icono-jugada">🪨</span>
-                        <span>Piedra</span>
+                        <div class="icono-jugada">🪨</div>
+                        <div>Piedra</div>
                     </button>
                     <button class="boton-eleccion-jugada" id="papel">
-                        <span class="icono-jugada">📄</span>
-                        <span>Papel</span>
+                        <div class="icono-jugada">📄</div>
+                        <div>Papel</div>
                     </button>
                     <button class="boton-eleccion-jugada" id="tijera">
-                        <span class="icono-jugada">✂️</span>
-                        <span>Tijera</span>
+                        <div class="icono-jugada">✂️</div>
+                        <div>Tijera</div>
                     </button>
                     <button class="boton-eleccion-jugada" id="lagarto">
-                        <span class="icono-jugada">🦎</span>
-                        <span>Lagarto</span>
+                        <div class="icono-jugada">🦎</div>
+                        <div>Lagarto</div>
                     </button>
                     <button class="boton-eleccion-jugada" id="spock">
-                        <span class="icono-jugada">🖖</span>
-                        <span>Spock</span>
+                        <div class="icono-jugada">🖖</div>
+                        <div>Spock</div>
                     </button>
                 </div>
             </section>
 
-            <!-- Panel de batalla -->
             <section class="panel-batalla">
                 <h2>Batalla</h2>
                 <div class="contenedor-jugadores">
                     <div class="jugador">
                         <div class="etiqueta-jugador">TÚ</div>
-                        <div class="mostrar-jugada" id="display-jugador">
-                            <span class="placeholder">?</span>
-                        </div>
+                        <div class="mostrar-jugada placeholder" id="display-jugador">?</div>
                     </div>
 
                     <div class="vs-circle">VS</div>
 
                     <div class="jugador">
                         <div class="etiqueta-jugador">CPU</div>
-                        <div class="mostrar-jugada" id="display-cpu">
-                            <span class="placeholder">?</span>
-                        </div>
+                        <div class="mostrar-jugada placeholder" id="display-cpu">?</div>
                     </div>
                 </div>
             </section>
         </div>
 
-        <!-- Panel de resultados y estadísticas -->
-        <section class="contenedor-resultado">
-            <div class="resultados">
-                <div class="mensaje-resultado" id="mensaje-resultado">¡Batalla!</div>
-                <div class="estadisticas-juego">
-                    <div class="panel-estadistica">
-                        <span class="valor-estadistica" id="victorias">0</span>
-                        <span class="etiqueta-estadistica">Victorias</span>
-                    </div>
-                    <div class="panel-estadistica">
-                        <span class="valor-estadistica" id="derrotas">0</span>
-                        <span class="etiqueta-estadistica">Derrotas</span>
-                    </div>
-                    <div class="panel-estadistica">
-                        <span class="valor-estadistica" id="empates">0</span>
-                        <span class="etiqueta-estadistica">Empates</span>
+        <div class="contenedor-con-botones">
+            <section class="contenedor-resultado">
+                <div class="resultados">
+                    <div class="mensaje-resultado" id="mensaje-resultado">¡Batalla!</div>
+                    <div class="estadisticas-juego">
+                        <div class="panel-estadistica">
+                            <div class="valor-estadistica" id="victorias">0</div>
+                            <div class="etiqueta-estadistica">Victorias</div>
+                        </div>
+                        <div class="panel-estadistica">
+                            <div class="valor-estadistica" id="derrotas">0</div>
+                            <div class="etiqueta-estadistica">Derrotas</div>
+                        </div>
+                        <div class="panel-estadistica">
+                            <div class="valor-estadistica" id="empates">0</div>
+                            <div class="etiqueta-estadistica">Empates</div>
+                        </div>
                     </div>
                 </div>
+            </section>
+
+            <div class="botones-opcionales">
+                <button class="boton-eleccion-jugada btn-opcional" id="btn-reiniciar">REINICIAR JUEGO</button>
+                <button class="boton-eleccion-jugada btn-opcional" id="btn-reglas">MOSTRAR REGLAS</button>
             </div>
-        </section>
+        </div>
     </main>
 
     <footer>
